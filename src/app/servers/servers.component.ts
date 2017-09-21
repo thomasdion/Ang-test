@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServersComponent implements OnInit {
 
-  constructor() { }
+  title : string;
+  
+  constructor() {
+      this.title="You talkin' to me? You talkin' to me? ";
+   }
 
   ngOnInit() {
   }
