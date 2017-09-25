@@ -1,17 +1,30 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import {ServersComponent} from '../servers/servers.component'
 
 @Component({
   selector: 'app-server',
-  templateUrl: './server.component.html'
+  templateUrl: './server.component.html',
+  styleUrls:['./server.component.css']
 })
-export class ServerComponent {
+export class ServerComponent implements OnInit{
 
   title:string;
-  body:string;
+  status:string;
+  @Input() name: string;
 
   constractor() {
-        this.title="Say hello to my little friend";
-        this.body="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec semper enim."+
-        "Praesent consectetur elit sit amet risus malesuada, quis molestie ipsum condimentum.";
+
+  }
+  ngOnInit() {
+    this.title="";
+    this.status="";
+    this.name="";
+  }
+  getColor(){
+
+         this.status = Math.random()>0.5?'Online':'Offline';
+         return this.status==='Online'?'green':'red';
+         //return 'white';
+        // return 'white';
   }
 }

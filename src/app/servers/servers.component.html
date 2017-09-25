@@ -1,3 +1,29 @@
-<p>
-  {{title}}
-</p>
+
+  <h1>
+    {{title}}
+  </h1>
+  <!-- <p><label>Give name:
+    <input [(ngModel)]="name" #ctrl="ngModel" required>
+    </label>
+  </p> -->
+  <p>
+      <input type="text" (input)="setName($event)" required>
+  </p>
+  <p>
+      Servers enabled = {{ serverNumber }}
+  </p>
+  <button class="btn btn-primary" [disabled]="!serverEnabled"
+    (click)="createServer()">Server</button>
+  <!-- <app-server *ngfor="let server of serverNumber"></app-server>   -->
+<!-- <p *ngIf="(serverNumber > 0) && (serverNumber < 5) ngIfElse (serverNumber > 5) manyServers "> Server Created, server name {{name}}</p> -->
+<p *ngIf="(serverNumber>0) && (serverNumber <= 5)"> Server Created, server name {{name}} </p>
+<div *ngIf="serverNumber == 0;then noServer"></div>
+<div *ngIf="serverNumber > 5;then manyServers"></div>
+     <ng-template #manyServers>
+        <p>To many servers</p>
+    </ng-template>
+    <ng-template #noServer>
+       <p>No server created</p>
+    </ng-template>
+<app-server [name]="name"></app-server>
+<!-- <app-server [servers]="servers"></app-server> -->

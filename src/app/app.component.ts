@@ -8,11 +8,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title:string;
-  name:string;
+  // name:string;
 
   constructor(){
     this.title='My app';
-    this.name='';
+    // this.name='sousouki';
   }
 
+  // setName(event:Event) {
+  //   console.log(event);
+  //   this.name = (<HTMLInputElement>event.target).value;
+  // }
 }

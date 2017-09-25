@@ -1,7 +1,5 @@
 <article>
-<h1>
-    {{constractor()}}
-    {{title}}
-</h1>
-<p></p>
+<p  [ngStyle]="{backgroundColor: getColor()}" >
+    Server Name:{{title}}{{name}}---Server Status:{{status}}
+</p>
 </article>
