@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-servers',
@@ -19,7 +20,7 @@ export class ServersComponent implements OnInit {
     serverNumber : number;
     servers : string[]=[];
 
-  constructor() {
+  constructor(private route : ActivatedRoute) {
    }
 
   setServerTimeout() {
@@ -35,7 +36,7 @@ export class ServersComponent implements OnInit {
 
   ngOnInit() {
 
-    this.title="Say hello to my little friend!!";
+    this.title=this.route.snapshot.data["title"];
     this.name="";
     this.serverNumber = 0;
     this.setServerTimeout();

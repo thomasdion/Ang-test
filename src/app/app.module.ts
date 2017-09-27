@@ -9,8 +9,8 @@ import { HomeComponent } from './home/home.component';
 
 const appRouting : Routes =[
  { path:'', component: HomeComponent },
- { path:'home', component: HomeComponent }
- { path:'servers', component:ServersComponent }
+ { path:'home', component: HomeComponent },
+ { path:'servers', component:ServersComponent, data : {title:"Add Server"} }
 
 ]
 @NgModule({
